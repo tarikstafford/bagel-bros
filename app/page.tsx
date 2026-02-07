@@ -32,6 +32,19 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-5xl">
+            {/* Logo */}
+            <div className="mb-8 sm:mb-12 animate-slide-up">
+              <div className="relative w-24 sm:w-28 lg:w-32 h-24 sm:h-28 lg:h-32">
+                <Image
+                  src="/images/logo-heart-bagel.png"
+                  alt="Bagel Bros"
+                  fill
+                  className="object-contain drop-shadow-lg"
+                  priority
+                />
+              </div>
+            </div>
+
             {/* Eyebrow */}
             <div className="animate-slide-up stagger-1">
               <div className="inline-block font-mono text-xs sm:text-sm uppercase tracking-wider bg-bagel-tan text-true-black px-4 py-2 mb-6 sm:mb-8">
@@ -114,10 +127,10 @@ export default function HomePage() {
 
       {/* Lifestyle Video Section */}
       <section className="py-20 sm:py-32 bg-true-black text-cream relative overflow-hidden">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Video/Image */}
-            <div className="relative aspect-video border-3 border-cream overflow-hidden group">
+            <div className="relative aspect-video border-3 border-cream overflow-hidden group max-w-md">
               <Image
                 src="/images/lifestyle-section.jpg"
                 alt="Padel players lifestyle"
@@ -171,7 +184,7 @@ export default function HomePage() {
             ></div>
           </div>
 
-          <div className="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative z-10 max-w-3xl mx-auto px-6 sm:px-8 lg:px-12">
             <div className="max-w-3xl mx-auto text-center">
               <h2 className="font-display text-display-lg mb-6 text-true-black">
                 {dropConfig.mode === 'sold-out' ? 'DROP 002' : 'JOIN THE'}
@@ -191,8 +204,8 @@ export default function HomePage() {
 
       {/* Brand Story Section with Images */}
       <section className="py-20 sm:py-32 bg-cream">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Text */}
             <div>
               <div className="font-mono text-xs uppercase tracking-wider bg-bagel-tan/20 text-true-black px-4 py-2 inline-block mb-6">
@@ -225,7 +238,7 @@ export default function HomePage() {
             </div>
 
             {/* Image */}
-            <div className="relative aspect-[3/4] border-3 border-true-black overflow-hidden group">
+            <div className="relative aspect-[4/5] border-3 border-true-black overflow-hidden group max-w-sm lg:max-w-md mx-auto lg:mx-0">
               <Image
                 src="/images/brand-story.jpg"
                 alt="Padel player in action"
@@ -242,20 +255,20 @@ export default function HomePage() {
       {/* Product Preview Grid */}
       {dropConfig.mode === 'live' && (
         <section className="py-20 sm:py-32 bg-true-black text-cream">
-          <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
             <h2 className="font-display text-display-lg mb-12 text-center">
               FEATURED
               <br />
               <span className="text-bagel-tan">DROP</span>
             </h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
               {[
                 '/images/product-1.jpg',
                 '/images/product-2.jpg',
                 '/images/product-3.jpg',
                 '/images/product-4.jpg',
               ].map((img, i) => (
-                <div key={i} className="relative aspect-square border-3 border-cream overflow-hidden group">
+                <div key={i} className="relative aspect-square border-3 border-cream overflow-hidden group max-w-[200px] mx-auto">
                   <Image
                     src={img}
                     alt={`Product ${i + 1}`}
@@ -282,7 +295,7 @@ export default function HomePage() {
       {/* Scarcity Stats */}
       {dropConfig.mode !== 'sold-out' && (
         <section className="py-16 sm:py-20 bg-cream border-t-3 border-b-3 border-true-black">
-          <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
             <div className="grid grid-cols-3 gap-8 text-center">
               <div>
                 <div className="font-display text-5xl sm:text-6xl lg:text-7xl mb-2 text-true-black">
@@ -315,7 +328,7 @@ export default function HomePage() {
 
       {/* Community Section */}
       <section className="py-20 sm:py-32 bg-true-black text-cream">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
           <h2 className="font-display text-display-md mb-12">
             THE
             <br />
@@ -323,7 +336,7 @@ export default function HomePage() {
           </h2>
 
           {/* Instagram-style grid */}
-          <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-12 max-w-3xl mx-auto">
+          <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-12 max-w-2xl mx-auto">
             {[
               '/images/community-1.jpg',
               '/images/community-2.jpg',
@@ -332,7 +345,7 @@ export default function HomePage() {
               '/images/community-5.jpg',
               '/images/community-6.jpg',
             ].map((img, i) => (
-              <div key={i} className="relative aspect-square border-2 border-cream/20 overflow-hidden group">
+              <div key={i} className="relative aspect-square border-2 border-cream/20 overflow-hidden group max-w-[180px] mx-auto">
                 <Image
                   src={img}
                   alt={`Community ${i + 1}`}
@@ -361,7 +374,7 @@ export default function HomePage() {
       {/* Final CTA */}
       {dropConfig.mode === 'live' && (
         <section className="py-20 sm:py-32 bg-bagel-tan text-true-black text-center">
-          <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto px-6 sm:px-8 lg:px-12">
             <h2 className="font-display text-display-lg mb-8">
               ONCE THEY&apos;RE GONE,
               <br />

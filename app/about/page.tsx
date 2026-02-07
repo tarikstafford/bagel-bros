@@ -23,7 +23,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
           <div className="font-mono text-xs uppercase tracking-wider bg-bagel-tan text-true-black px-4 py-2 inline-block mb-8">
             The Manifesto
           </div>
@@ -42,7 +42,7 @@ export default function AboutPage() {
 
       {/* What is a Bagel with Image */}
       <section className="py-20 sm:py-32 bg-bagel-tan">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-display text-display-md mb-8 text-center">
               WHAT IS A BAGEL?
@@ -55,7 +55,7 @@ export default function AboutPage() {
               </p>
             </div>
             {/* Scoreboard Image */}
-            <div className="relative aspect-video border-3 border-true-black overflow-hidden">
+            <div className="relative aspect-video border-3 border-true-black overflow-hidden max-w-2xl mx-auto">
               <Image
                 src="/images/scoreboard.jpg"
                 alt="Scoreboard showing 6-0"
@@ -70,7 +70,7 @@ export default function AboutPage() {
 
       {/* Our Story */}
       <section className="py-20 sm:py-32 bg-cream">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
             {/* Left Column */}
             <div>
@@ -250,21 +250,21 @@ export default function AboutPage() {
 
       {/* Team/Community Gallery */}
       <section className="py-20 sm:py-32 bg-cream">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
           <h2 className="font-display text-display-md mb-12 text-center">
             THE
             <br />
             <span className="text-bagel-tan">TEAM</span>
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
             {[
               '/images/team-1.jpg',
               '/images/team-2.jpg',
               '/images/team-3.jpg',
               '/images/team-4.jpg',
             ].map((img, i) => (
-              <div key={i} className="relative aspect-[3/4] border-3 border-true-black overflow-hidden group">
+              <div key={i} className="relative aspect-[4/5] border-3 border-true-black overflow-hidden group max-w-[200px] mx-auto">
                 <Image
                   src={img}
                   alt={`Team member ${i + 1}`}

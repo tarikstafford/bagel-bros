@@ -32,7 +32,7 @@ export default async function ShopPage() {
     <div className="min-h-screen pt-24 sm:pt-28 pb-20">
       {/* Hero Header */}
       <section className="bg-true-black text-cream py-16 sm:py-20 mb-16 sm:mb-20">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
             <div className="font-mono text-xs uppercase tracking-wider bg-bagel-tan text-true-black px-4 py-2 inline-block mb-6">
               Now Available
@@ -63,7 +63,7 @@ export default async function ShopPage() {
       </section>
 
       {/* Products Grid */}
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
         {products.length === 0 ? (
           <div className="text-center py-20">
             <div className="font-display text-display-md mb-4 text-true-black/20">
@@ -74,7 +74,7 @@ export default async function ShopPage() {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {products.map((product, index) => (
               <div
                 key={product.id}
@@ -89,7 +89,7 @@ export default async function ShopPage() {
       </div>
 
       {/* Bottom CTA */}
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 mt-20 sm:mt-32">
+      <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 mt-20 sm:mt-32">
         <div className="border-brutal bg-cream p-8 sm:p-12 text-center">
           <h2 className="font-display text-4xl sm:text-5xl mb-4">
             ONCE THEY&apos;RE GONE,
