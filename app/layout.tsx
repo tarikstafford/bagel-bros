@@ -9,10 +9,15 @@ export const metadata: Metadata = {
   title: 'Bagel Bros | Drop 001',
   description: 'Premium streetwear for the 6-0 Club. Limited drops, no restocks. Getting bageled never looked this good.',
   keywords: ['streetwear', 'merch', 'limited edition', 'bagel', 'padel', 'tennis', 'drop culture'],
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/images/logo-icon.png',
+  },
   openGraph: {
     title: 'Bagel Bros | Drop 001',
     description: 'Premium streetwear for the 6-0 Club. Limited drops, no restocks.',
     type: 'website',
+    images: ['/images/logo-main.png'],
   },
 };
 

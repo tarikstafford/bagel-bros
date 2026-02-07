@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useCartStore } from '@/lib/store/cart-store';
 import { getDropConfig } from '@/lib/config/drop-config';
 
@@ -16,9 +17,28 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-display text-3xl sm:text-4xl lg:text-5xl tracking-tight hover:text-bagel-tan transition-colors duration-300"
+            className="flex items-center gap-3 group"
           >
-            BAGEL BROS
+            {/* Icon only on mobile */}
+            <div className="relative w-12 h-12 sm:hidden">
+              <Image
+                src="/images/logo-icon.png"
+                alt="Bagel Bros"
+                fill
+                className="object-contain group-hover:opacity-80 transition-opacity duration-300"
+                priority
+              />
+            </div>
+            {/* Horizontal logo on desktop */}
+            <div className="relative hidden sm:block w-48 lg:w-56 h-12">
+              <Image
+                src="/images/logo-horizontal.png"
+                alt="Bagel Bros"
+                fill
+                className="object-contain object-left group-hover:opacity-80 transition-opacity duration-300"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Navigation */}

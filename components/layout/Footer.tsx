@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -8,9 +9,19 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
           {/* Brand */}
           <div className="lg:col-span-5">
-            <h2 className="font-display text-5xl sm:text-6xl mb-6">
-              BAGEL BROS
-            </h2>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="relative w-16 h-16">
+                <Image
+                  src="/images/logo-icon.png"
+                  alt="Bagel Bros"
+                  fill
+                  className="object-contain brightness-0 invert"
+                />
+              </div>
+              <h2 className="font-display text-5xl sm:text-6xl">
+                BAGEL BROS
+              </h2>
+            </div>
             <p className="font-mono text-sm text-cream/70 max-w-md leading-relaxed">
               Premium streetwear for the 6-0 Club.
               <br />
