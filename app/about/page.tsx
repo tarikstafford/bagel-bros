@@ -55,7 +55,7 @@ export default function AboutPage() {
               </p>
             </div>
             {/* Scoreboard Image */}
-            <div className="relative aspect-video border-3 border-true-black overflow-hidden max-w-2xl mx-auto">
+            <div className="relative w-full aspect-video border-3 border-true-black overflow-hidden max-w-2xl mx-auto">
               <Image
                 src="/images/scoreboard.jpg"
                 alt="Scoreboard showing 6-0"
@@ -264,7 +264,7 @@ export default function AboutPage() {
               '/images/team-3.jpg',
               '/images/team-4.jpg',
             ].map((img, i) => (
-              <div key={i} className="relative aspect-[4/5] border-3 border-true-black overflow-hidden group max-w-[200px] mx-auto">
+              <div key={i} className="relative w-full aspect-[4/5] border-3 border-true-black overflow-hidden group max-w-[200px] mx-auto">
                 <Image
                   src={img}
                   alt={`Team member ${i + 1}`}

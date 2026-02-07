@@ -29,7 +29,7 @@ export default async function ShopPage() {
   const products = await getProducts();
 
   return (
-    <div className="min-h-screen pt-24 sm:pt-28 pb-20">
+    <div className="min-h-screen pt-36 sm:pt-40 pb-20">
       {/* Hero Header */}
       <section className="bg-true-black text-cream py-16 sm:py-20 mb-16 sm:mb-20">
         <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
@@ -74,7 +74,7 @@ export default async function ShopPage() {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
             {products.map((product, index) => (
               <div
                 key={product.id}

@@ -10,14 +10,14 @@ export default function HomePage() {
   return (
     <div className="min-h-screen pt-24 sm:pt-28">
       {/* Hero Section - Brutalist Impact */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden grain bg-cream">
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden grain bg-cream">
         {/* Background Video/Image */}
         <div className="absolute inset-0">
           <Image
             src="/images/hero-background.jpg"
             alt="Padel court action"
             fill
-            className="object-cover opacity-15"
+            className="object-cover opacity-10"
             priority
             sizes="100vw"
           />
@@ -33,14 +33,15 @@ export default function HomePage() {
         <div className="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-5xl">
             {/* Logo */}
-            <div className="mb-8 sm:mb-12 animate-slide-up">
-              <div className="relative w-24 sm:w-28 lg:w-32 h-24 sm:h-28 lg:h-32">
+            <div className="mb-6 sm:mb-8 animate-slide-up">
+              <div className="relative w-16 sm:w-20 lg:w-24 h-16 sm:h-20 lg:h-24 flex-shrink-0">
                 <Image
                   src="/images/logo-heart-bagel.png"
                   alt="Bagel Bros"
                   fill
                   className="object-contain drop-shadow-lg"
                   priority
+                  sizes="(max-width: 640px) 64px, (max-width: 1024px) 80px, 96px"
                 />
               </div>
             </div>
@@ -130,7 +131,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Video/Image */}
-            <div className="relative aspect-video border-3 border-cream overflow-hidden group max-w-md">
+            <div className="relative w-full aspect-video border-3 border-cream overflow-hidden group lg:max-w-md">
               <Image
                 src="/images/lifestyle-section.jpg"
                 alt="Padel players lifestyle"
@@ -238,7 +239,7 @@ export default function HomePage() {
             </div>
 
             {/* Image */}
-            <div className="relative aspect-[4/5] border-3 border-true-black overflow-hidden group max-w-sm lg:max-w-md mx-auto lg:mx-0">
+            <div className="relative w-full aspect-video border-3 border-true-black overflow-hidden group max-w-md lg:max-w-lg mx-auto lg:mx-0">
               <Image
                 src="/images/brand-story.jpg"
                 alt="Padel player in action"
@@ -268,7 +269,7 @@ export default function HomePage() {
                 '/images/product-3.jpg',
                 '/images/product-4.jpg',
               ].map((img, i) => (
-                <div key={i} className="relative aspect-square border-3 border-cream overflow-hidden group max-w-[200px] mx-auto">
+                <div key={i} className="relative w-full aspect-square border-3 border-cream overflow-hidden group max-w-[200px] mx-auto">
                   <Image
                     src={img}
                     alt={`Product ${i + 1}`}
@@ -345,7 +346,7 @@ export default function HomePage() {
               '/images/community-5.jpg',
               '/images/community-6.jpg',
             ].map((img, i) => (
-              <div key={i} className="relative aspect-square border-2 border-cream/20 overflow-hidden group max-w-[180px] mx-auto">
+              <div key={i} className="relative w-full aspect-square border-2 border-cream/20 overflow-hidden group max-w-[180px] mx-auto">
                 <Image
                   src={img}
                   alt={`Community ${i + 1}`}

@@ -25,7 +25,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       className="group block"
     >
       {/* Image Container */}
-      <div className="relative aspect-[4/5] bg-true-black/5 border-3 border-true-black overflow-hidden mb-4">
+      <div className="relative w-full aspect-square bg-true-black/5 border-3 border-true-black overflow-hidden mb-3">
         {image ? (
           <Image
             src={image.url}
@@ -64,8 +64,8 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
 
       {/* Product Info */}
-      <div className="space-y-2">
-        <h3 className="font-display text-2xl sm:text-3xl group-hover:text-bagel-tan transition-colors duration-300">
+      <div className="space-y-1">
+        <h3 className="font-display text-xl sm:text-2xl group-hover:text-bagel-tan transition-colors duration-300 leading-tight">
           {product.title}
         </h3>
         <div className="flex items-center justify-between">

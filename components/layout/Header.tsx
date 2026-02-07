@@ -11,43 +11,42 @@ export default function Header() {
   const itemCount = lines.reduce((acc, line) => acc + line.quantity, 0);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-cream backdrop-blur-sm border-b-3 border-true-black shadow-sm">
-      <nav className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 sm:h-24">
-          {/* Logo */}
+    <header className="fixed top-0 left-0 right-0 z-50 bg-cream border-b-4 border-true-black">
+      <nav className="max-w-[1800px] mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-24 sm:h-28">
+          {/* Logo + Brand - Left Side */}
           <Link
             href="/"
-            className="flex items-center gap-3 group"
+            className="flex items-center gap-3 sm:gap-4 group flex-shrink-0"
           >
-            {/* Heart+Bagel icon only on mobile */}
-            <div className="relative w-12 h-12 sm:hidden">
+            {/* Logo icon with border */}
+            <div className="relative w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 border-3 border-true-black p-2 bg-white group-hover:bg-bagel-tan transition-colors duration-300">
               <Image
                 src="/images/logo-heart-bagel.png"
-                alt="Bagel Bros"
+                alt="Bagel Bros Logo"
                 fill
-                className="object-contain drop-shadow-sm group-hover:opacity-80 transition-opacity duration-300"
+                className="object-contain p-1"
                 priority
-                style={{ filter: 'contrast(1.1) brightness(0.95)' }}
+                sizes="64px"
               />
             </div>
-            {/* Horizontal logo on desktop */}
-            <div className="relative hidden sm:block w-56 lg:w-64 h-12">
-              <Image
-                src="/images/logo-heart-horizontal.png"
-                alt="Bagel Bros"
-                fill
-                className="object-contain object-left drop-shadow-sm group-hover:opacity-80 transition-opacity duration-300"
-                priority
-                style={{ filter: 'contrast(1.1) brightness(0.95)' }}
-              />
+
+            {/* Brand text */}
+            <div className="flex flex-col">
+              <h1 className="font-display text-2xl sm:text-3xl md:text-4xl tracking-tight leading-none group-hover:text-bagel-tan transition-colors duration-300">
+                BAGEL BROS
+              </h1>
+              <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-true-black/60 mt-0.5">
+                6-0 Club
+              </span>
             </div>
           </Link>
 
-          {/* Navigation */}
-          <div className="flex items-center gap-6 sm:gap-8 lg:gap-12">
+          {/* Navigation - Right Side */}
+          <div className="flex items-center gap-8 sm:gap-10 lg:gap-14">
             <Link
               href="/about"
-              className="font-mono text-xs sm:text-sm font-bold uppercase tracking-wider hover:text-bagel-tan transition-colors duration-300 hidden sm:block"
+              className="font-mono text-sm sm:text-base font-bold uppercase tracking-wider hover:text-bagel-tan transition-colors duration-300 hidden md:block"
             >
               Manifesto
             </Link>
@@ -55,7 +54,7 @@ export default function Header() {
             {dropConfig.isShopEnabled && (
               <Link
                 href="/shop"
-                className="font-mono text-xs sm:text-sm font-bold uppercase tracking-wider hover:text-bagel-tan transition-colors duration-300"
+                className="font-mono text-sm sm:text-base font-bold uppercase tracking-wider hover:text-bagel-tan transition-colors duration-300"
               >
                 Shop
               </Link>
@@ -64,17 +63,17 @@ export default function Header() {
             {dropConfig.isShopEnabled && (
               <button
                 onClick={openCart}
-                className="relative group"
+                className="relative group flex-shrink-0"
                 aria-label="Open cart"
               >
-                <div className="relative">
+                <div className="relative border-3 border-true-black p-2.5 sm:p-3 bg-white group-hover:bg-bagel-tan transition-colors duration-300">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    strokeWidth={2}
+                    strokeWidth={2.5}
                     stroke="currentColor"
-                    className="w-7 h-7 sm:w-8 sm:h-8 group-hover:text-bagel-tan transition-colors duration-300"
+                    className="w-6 h-6 sm:w-7 sm:h-7"
                   >
                     <path
                       strokeLinecap="round"
@@ -83,7 +82,7 @@ export default function Header() {
                     />
                   </svg>
                   {itemCount > 0 && (
-                    <span className="absolute -top-2 -right-2 bg-bagel-tan text-true-black text-xs font-mono font-bold rounded-full w-6 h-6 flex items-center justify-center border-2 border-true-black">
+                    <span className="absolute -top-2 -right-2 bg-true-black text-cream text-xs font-mono font-bold w-7 h-7 flex items-center justify-center border-3 border-true-black">
                       {itemCount}
                     </span>
                   )}
