@@ -8,7 +8,7 @@ export default function AboutPage() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2940&auto=format&fit=crop"
+            src="/images/about-hero.jpg"
             alt="Padel court"
             fill
             className="object-cover opacity-20"
@@ -57,7 +57,7 @@ export default function AboutPage() {
             {/* Scoreboard Image */}
             <div className="relative aspect-video border-3 border-true-black overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?q=80&w=2940&auto=format&fit=crop"
+                src="/images/scoreboard.jpg"
                 alt="Scoreboard showing 6-0"
                 fill
                 className="object-cover"
@@ -102,7 +102,7 @@ export default function AboutPage() {
               <div className="grid grid-cols-2 gap-4 mt-12">
                 <div className="relative aspect-square border-3 border-true-black overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?q=80&w=2939&auto=format&fit=crop"
+                    src="/images/story-gallery-1.jpg"
                     alt="Players on court"
                     fill
                     className="object-cover hover:scale-110 transition-transform duration-700"
@@ -111,7 +111,7 @@ export default function AboutPage() {
                 </div>
                 <div className="relative aspect-square border-3 border-true-black overflow-hidden">
                   <Image
-                    src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=2940&auto=format&fit=crop"
+                    src="/images/story-gallery-2.jpg"
                     alt="Padel action"
                     fill
                     className="object-cover hover:scale-110 transition-transform duration-700"
@@ -134,7 +134,7 @@ export default function AboutPage() {
               {/* Large Image */}
               <div className="relative aspect-[4/5] border-brutal overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1605289982774-9a6fef564df8?q=80&w=2564&auto=format&fit=crop"
+                  src="/images/about-lifestyle.jpg"
                   alt="Player lifestyle"
                   fill
                   className="object-cover hover:scale-105 transition-transform duration-700"
@@ -166,7 +166,7 @@ export default function AboutPage() {
       <section className="py-20 sm:py-32 bg-true-black text-cream relative">
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=2574&auto=format&fit=crop"
+            src="/images/lifestyle-section.jpg"
             alt="Court lifestyle"
             fill
             className="object-cover opacity-15"
@@ -259,10 +259,10 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              'https://images.unsplash.com/photo-1519311965067-36d3e5f33d39?q=80&w=2941&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=2574&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1605289982774-9a6fef564df8?q=80&w=2564&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?q=80&w=2939&auto=format&fit=crop',
+              '/images/team-1.jpg',
+              '/images/team-2.jpg',
+              '/images/team-3.jpg',
+              '/images/team-4.jpg',
             ].map((img, i) => (
               <div key={i} className="relative aspect-[3/4] border-3 border-true-black overflow-hidden group">
                 <Image

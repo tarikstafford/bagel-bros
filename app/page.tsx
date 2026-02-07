@@ -14,7 +14,7 @@ export default function HomePage() {
         {/* Background Video/Image */}
         <div className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2940&auto=format&fit=crop"
+            src="/images/hero-background.jpg"
             alt="Padel court action"
             fill
             className="object-cover opacity-15"
@@ -119,7 +119,7 @@ export default function HomePage() {
             {/* Video/Image */}
             <div className="relative aspect-[4/3] border-3 border-cream overflow-hidden group">
               <Image
-                src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?q=80&w=2939&auto=format&fit=crop"
+                src="/images/lifestyle-section.jpg"
                 alt="Padel players lifestyle"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -227,7 +227,7 @@ export default function HomePage() {
             {/* Image */}
             <div className="relative aspect-[4/5] border-3 border-true-black overflow-hidden group">
               <Image
-                src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=2940&auto=format&fit=crop"
+                src="/images/brand-story.jpg"
                 alt="Padel player in action"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -250,10 +250,10 @@ export default function HomePage() {
             </h2>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {[
-                'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2960&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=2787&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=2940&auto=format&fit=crop',
-                'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2787&auto=format&fit=crop',
+                '/images/product-1.jpg',
+                '/images/product-2.jpg',
+                '/images/product-3.jpg',
+                '/images/product-4.jpg',
               ].map((img, i) => (
                 <div key={i} className="relative aspect-square border-3 border-cream overflow-hidden group">
                   <Image
@@ -325,12 +325,12 @@ export default function HomePage() {
           {/* Instagram-style grid */}
           <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-12">
             {[
-              'https://images.unsplash.com/photo-1605289982774-9a6fef564df8?q=80&w=2564&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=2574&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1519311965067-36d3e5f33d39?q=80&w=2941&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=2940&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?q=80&w=2939&auto=format&fit=crop',
-              'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2940&auto=format&fit=crop',
+              '/images/community-1.jpg',
+              '/images/community-2.jpg',
+              '/images/community-3.jpg',
+              '/images/community-4.jpg',
+              '/images/community-5.jpg',
+              '/images/community-6.jpg',
             ].map((img, i) => (
               <div key={i} className="relative aspect-square border-2 border-cream/20 overflow-hidden group">
                 <Image
