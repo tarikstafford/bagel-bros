@@ -19,10 +19,10 @@ export default function Header() {
             href="/"
             className="flex items-center gap-3 group"
           >
-            {/* Icon only on mobile */}
-            <div className="relative w-12 h-12 sm:hidden">
+            {/* Heart+Bagel icon only on mobile */}
+            <div className="relative w-10 h-10 sm:hidden">
               <Image
-                src="/images/logo-icon.png"
+                src="/images/logo-heart-bagel.png"
                 alt="Bagel Bros"
                 fill
                 className="object-contain group-hover:opacity-80 transition-opacity duration-300"
@@ -30,9 +30,9 @@ export default function Header() {
               />
             </div>
             {/* Horizontal logo on desktop */}
-            <div className="relative hidden sm:block w-48 lg:w-56 h-12">
+            <div className="relative hidden sm:block w-52 lg:w-64 h-10">
               <Image
-                src="/images/logo-horizontal.png"
+                src="/images/logo-heart-horizontal.png"
                 alt="Bagel Bros"
                 fill
                 className="object-contain object-left group-hover:opacity-80 transition-opacity duration-300"

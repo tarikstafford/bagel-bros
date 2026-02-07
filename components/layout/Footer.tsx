@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="flex items-center gap-4 mb-6">
               <div className="relative w-16 h-16">
                 <Image
-                  src="/images/logo-icon.png"
+                  src="/images/logo-heart-bagel.png"
                   alt="Bagel Bros"
                   fill
                   className="object-contain brightness-0 invert"
