@@ -1,8 +1,22 @@
+import Image from 'next/image';
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen pt-20 sm:pt-24">
-      {/* Hero */}
+      {/* Hero with Background Image */}
       <section className="py-20 sm:py-32 bg-true-black text-cream relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2940&auto=format&fit=crop"
+            alt="Padel court"
+            fill
+            className="object-cover opacity-20"
+            priority
+            sizes="100vw"
+          />
+        </div>
+
         <div className="absolute inset-0 opacity-5">
           <div className="font-display text-[30vw] leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap">
             6-0 6-0 6-0
@@ -26,19 +40,29 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* What is a Bagel */}
+      {/* What is a Bagel with Image */}
       <section className="py-20 sm:py-32 bg-bagel-tan">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-display text-display-md mb-8 text-center">
               WHAT IS A BAGEL?
             </h2>
-            <div className="border-brutal bg-cream p-8 sm:p-12">
+            <div className="border-brutal bg-cream p-8 sm:p-12 mb-8">
               <p className="font-mono text-base sm:text-lg leading-relaxed text-center">
                 In padel (and tennis), getting &quot;bageled&quot; means losing a set 6-0.
                 It&apos;s the ultimate scoreline. The perfect circle of defeat. A donut. A zero.
                 And somehow, it keeps happening to us.
               </p>
+            </div>
+            {/* Scoreboard Image */}
+            <div className="relative aspect-video border-3 border-true-black overflow-hidden">
+              <Image
+                src="https://images.unsplash.com/photo-1587280501635-68a0e82cd5ff?q=80&w=2940&auto=format&fit=crop"
+                alt="Scoreboard showing 6-0"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+              />
             </div>
           </div>
         </div>
@@ -73,9 +97,31 @@ export default function AboutPage() {
                   If you can&apos;t beat them, at least look good losing.
                 </p>
               </div>
+
+              {/* Gallery Row */}
+              <div className="grid grid-cols-2 gap-4 mt-12">
+                <div className="relative aspect-square border-3 border-true-black overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?q=80&w=2939&auto=format&fit=crop"
+                    alt="Players on court"
+                    fill
+                    className="object-cover hover:scale-110 transition-transform duration-700"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
+                <div className="relative aspect-square border-3 border-true-black overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=2940&auto=format&fit=crop"
+                    alt="Padel action"
+                    fill
+                    className="object-cover hover:scale-110 transition-transform duration-700"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
+                </div>
+              </div>
             </div>
 
-            {/* Right Column */}
+            {/* Right Column - Stats */}
             <div className="space-y-6">
               {/* Stat Block 1 */}
               <div className="border-brutal bg-true-black text-cream p-8">
@@ -83,6 +129,17 @@ export default function AboutPage() {
                 <div className="font-mono text-sm uppercase tracking-wider text-cream/60">
                   Acceptance Rate of Defeat
                 </div>
+              </div>
+
+              {/* Large Image */}
+              <div className="relative aspect-[4/5] border-brutal overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1605289982774-9a6fef564df8?q=80&w=2564&auto=format&fit=crop"
+                  alt="Player lifestyle"
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-700"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
               </div>
 
               {/* Stat Block 2 */}
@@ -105,9 +162,19 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* The Mission */}
-      <section className="py-20 sm:py-32 bg-true-black text-cream">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+      {/* The Mission with Background */}
+      <section className="py-20 sm:py-32 bg-true-black text-cream relative">
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=2574&auto=format&fit=crop"
+            alt="Court lifestyle"
+            fill
+            className="object-cover opacity-15"
+            sizes="100vw"
+          />
+        </div>
+
+        <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-display-lg mb-16 text-center">
             THE
             <br />
@@ -181,22 +248,53 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Limited Drops */}
+      {/* Team/Community Gallery */}
       <section className="py-20 sm:py-32 bg-cream">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-display-md mb-12 text-center">
+            THE
+            <br />
+            <span className="text-bagel-tan">TEAM</span>
+          </h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              'https://images.unsplash.com/photo-1519311965067-36d3e5f33d39?q=80&w=2941&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=2574&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1605289982774-9a6fef564df8?q=80&w=2564&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?q=80&w=2939&auto=format&fit=crop',
+            ].map((img, i) => (
+              <div key={i} className="relative aspect-[3/4] border-3 border-true-black overflow-hidden group">
+                <Image
+                  src={img}
+                  alt={`Team member ${i + 1}`}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                  sizes="(max-width: 768px) 50vw, (max-width: 1024px) 25vw, 20vw"
+                />
+                <div className="absolute inset-0 bg-bagel-tan/0 group-hover:bg-bagel-tan/20 transition-colors duration-300"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Limited Drops */}
+      <section className="py-20 sm:py-32 bg-true-black text-cream text-center">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-display-lg mb-8">
             LIMITED DROPS.
             <br />
             <span className="text-bagel-tan">NO RESTOCKS.</span>
           </h2>
 
-          <p className="font-mono text-base sm:text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
+          <p className="font-mono text-base sm:text-lg max-w-2xl mx-auto mb-12 leading-relaxed text-cream/80">
             Just like that perfect 6-0 scoreline, each drop is a once-in-a-lifetime event.
             When it&apos;s gone, it&apos;s gone forever. No mass production. No selling out to big box stores.
             Just small batches of premium gear for people who get it.
           </p>
 
-          <div className="inline-block border-brutal bg-true-black text-cream px-12 py-6">
+          <div className="inline-block border-brutal bg-bagel-tan text-true-black px-12 py-6">
             <p className="font-display text-3xl sm:text-4xl">
               IF YOU KNOW,
               <br />
@@ -207,14 +305,14 @@ export default function AboutPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 sm:py-32 bg-true-black text-cream text-center">
+      <section className="py-20 sm:py-32 bg-bagel-tan text-true-black text-center">
         <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="font-display text-display-lg mb-6">
             WELCOME TO
             <br />
-            <span className="text-bagel-tan">THE CLUB</span>
+            <span className="text-true-black">THE CLUB</span>
           </h2>
-          <p className="font-mono text-sm text-cream/60">
+          <p className="font-mono text-sm text-true-black/60">
             See you on the court (where we&apos;ll probably lose)
           </p>
         </div>

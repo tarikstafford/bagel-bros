@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { getDropConfig, formatDropDate } from '@/lib/config/drop-config';
 import WaitlistForm from '@/components/home/WaitlistForm';
 import CountdownTimer from '@/components/home/CountdownTimer';
@@ -9,7 +10,19 @@ export default function HomePage() {
   return (
     <div className="min-h-screen pt-20 sm:pt-24">
       {/* Hero Section - Brutalist Impact */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden grain">
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden grain bg-cream">
+        {/* Background Video/Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2940&auto=format&fit=crop"
+            alt="Padel court action"
+            fill
+            className="object-cover opacity-15"
+            priority
+            sizes="100vw"
+          />
+        </div>
+
         {/* Background Graphic Element */}
         <div className="absolute inset-0 flex items-center justify-center opacity-5">
           <div className="font-display text-[40vw] leading-none select-none">
@@ -99,19 +112,60 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Lifestyle Video Section */}
+      <section className="py-20 sm:py-32 bg-true-black text-cream relative overflow-hidden">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            {/* Video/Image */}
+            <div className="relative aspect-[4/3] border-3 border-cream overflow-hidden group">
+              <Image
+                src="https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?q=80&w=2939&auto=format&fit=crop"
+                alt="Padel players lifestyle"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              {/* Play button overlay for future video */}
+              <div className="absolute inset-0 flex items-center justify-center bg-true-black/40 group-hover:bg-true-black/20 transition-colors">
+                <div className="w-20 h-20 border-3 border-cream rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-cream border-b-8 border-b-transparent ml-1"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Text */}
+            <div>
+              <h2 className="font-display text-display-md mb-6">
+                EMBRACE
+                <br />
+                THE
+                <br />
+                <span className="text-bagel-tan">BAGEL</span>
+              </h2>
+              <p className="font-mono text-base sm:text-lg text-cream/80 leading-relaxed mb-6">
+                We don&apos;t win. We show up anyway. Getting destroyed on court is just part of the lifestyle.
+              </p>
+              <p className="font-mono text-sm text-cream/60">
+                Watch: The 6-0 Club documentary (coming soon)
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Waitlist Section */}
       {dropConfig.showWaitlist && (
-        <section className="py-20 sm:py-32 bg-true-black text-cream relative overflow-hidden">
+        <section className="py-20 sm:py-32 bg-bagel-tan relative overflow-hidden">
           {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 left-0 w-full h-full"
               style={{
                 backgroundImage: `repeating-linear-gradient(
                   45deg,
                   transparent,
                   transparent 35px,
-                  rgba(254, 254, 254, 0.1) 35px,
-                  rgba(254, 254, 254, 0.1) 70px
+                  rgba(10, 10, 10, 0.1) 35px,
+                  rgba(10, 10, 10, 0.1) 70px
                 )`
               }}
             ></div>
@@ -119,12 +173,12 @@ export default function HomePage() {
 
           <div className="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="font-display text-display-lg mb-6">
+              <h2 className="font-display text-display-lg mb-6 text-true-black">
                 {dropConfig.mode === 'sold-out' ? 'DROP 002' : 'JOIN THE'}
                 <br />
-                <span className="text-bagel-tan">6-0 CLUB</span>
+                <span className="text-true-black">6-0 CLUB</span>
               </h2>
-              <p className="font-mono text-sm sm:text-base mb-12 text-cream/70 max-w-xl mx-auto">
+              <p className="font-mono text-sm sm:text-base mb-12 text-true-black/70 max-w-xl mx-auto">
                 {dropConfig.mode === 'sold-out'
                   ? 'Get early access to Drop 002. First to know, first to cop.'
                   : 'Get notified when the drop goes live. No spam, just drops.'}
@@ -135,7 +189,7 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* Brand Story Section */}
+      {/* Brand Story Section with Images */}
       <section className="py-20 sm:py-32 bg-cream">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -170,27 +224,64 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Image Placeholder */}
-            <div className="relative aspect-[4/5] bg-true-black/5 border-3 border-true-black overflow-hidden group">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="font-display text-9xl text-true-black/10 mb-4">6-0</div>
-                  <p className="font-mono text-xs text-true-black/40 uppercase tracking-wider">
-                    Product Photo Here
-                    <br />
-                    <span className="text-[10px]">Lifestyle shot: Player on court with bagel tee</span>
-                  </p>
-                </div>
-              </div>
+            {/* Image */}
+            <div className="relative aspect-[4/5] border-3 border-true-black overflow-hidden group">
+              <Image
+                src="https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=2940&auto=format&fit=crop"
+                alt="Padel player in action"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
               <div className="absolute inset-0 bg-bagel-tan/0 group-hover:bg-bagel-tan/10 transition-colors duration-500"></div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Product Preview Grid */}
+      {dropConfig.mode === 'live' && (
+        <section className="py-20 sm:py-32 bg-true-black text-cream">
+          <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-display text-display-lg mb-12 text-center">
+              FEATURED
+              <br />
+              <span className="text-bagel-tan">DROP</span>
+            </h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {[
+                'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=2960&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=2787&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=2940&auto=format&fit=crop',
+                'https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=2787&auto=format&fit=crop',
+              ].map((img, i) => (
+                <div key={i} className="relative aspect-square border-3 border-cream overflow-hidden group">
+                  <Image
+                    src={img}
+                    alt={`Product ${i + 1}`}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
+                    sizes="(max-width: 1024px) 50vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-bagel-tan/0 group-hover:bg-bagel-tan/30 transition-colors duration-300"></div>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-12">
+              <Link
+                href="/shop"
+                className="inline-block border-brutal border-brutal-hover bg-bagel-tan text-true-black px-12 py-5 font-display text-2xl"
+              >
+                Shop All
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Scarcity Stats */}
       {dropConfig.mode !== 'sold-out' && (
-        <section className="py-16 sm:py-20 bg-bagel-tan">
+        <section className="py-16 sm:py-20 bg-cream border-t-3 border-b-3 border-true-black">
           <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-3 gap-8 text-center">
               <div>
@@ -222,21 +313,66 @@ export default function HomePage() {
         </section>
       )}
 
+      {/* Community Section */}
+      <section className="py-20 sm:py-32 bg-true-black text-cream">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-display text-display-md mb-12">
+            THE
+            <br />
+            <span className="text-bagel-tan">COMMUNITY</span>
+          </h2>
+
+          {/* Instagram-style grid */}
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-12">
+            {[
+              'https://images.unsplash.com/photo-1605289982774-9a6fef564df8?q=80&w=2564&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1612872087720-bb876e2e67d1?q=80&w=2574&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1519311965067-36d3e5f33d39?q=80&w=2941&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1626224583764-f87db24ac4ea?q=80&w=2940&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1622279457486-62dcc4a431d6?q=80&w=2939&auto=format&fit=crop',
+              'https://images.unsplash.com/photo-1554068865-24cecd4e34b8?q=80&w=2940&auto=format&fit=crop',
+            ].map((img, i) => (
+              <div key={i} className="relative aspect-square border-2 border-cream/20 overflow-hidden group">
+                <Image
+                  src={img}
+                  alt={`Community ${i + 1}`}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  sizes="(max-width: 640px) 33vw, (max-width: 1024px) 20vw, 15vw"
+                />
+              </div>
+            ))}
+          </div>
+
+          <p className="font-mono text-sm text-cream/70 mb-6">
+            Tag us in your gear
+          </p>
+          <a
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-mono text-lg font-bold text-bagel-tan hover:text-cream transition-colors border-b-2 border-bagel-tan hover:border-cream"
+          >
+            @bagelbros
+          </a>
+        </div>
+      </section>
+
       {/* Final CTA */}
       {dropConfig.mode === 'live' && (
-        <section className="py-20 sm:py-32 bg-true-black text-cream text-center">
+        <section className="py-20 sm:py-32 bg-bagel-tan text-true-black text-center">
           <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="font-display text-display-lg mb-8">
               ONCE THEY&apos;RE GONE,
               <br />
-              <span className="text-bagel-tan">THEY&apos;RE GONE</span>
+              <span className="text-true-black">THEY&apos;RE GONE</span>
             </h2>
             <Link
               href="/shop"
               className="inline-block group"
             >
-              <div className="border-3 border-cream hover:bg-cream px-12 py-6 transition-colors duration-300">
-                <span className="font-display text-3xl sm:text-4xl group-hover:text-true-black transition-colors duration-300">
+              <div className="border-3 border-true-black hover:bg-true-black px-12 py-6 transition-colors duration-300">
+                <span className="font-display text-3xl sm:text-4xl group-hover:text-cream transition-colors duration-300">
                   Shop Now
                 </span>
               </div>
