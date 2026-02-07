@@ -43,7 +43,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const isLowStock = totalInventory > 0 && totalInventory <= 10;
 
   return (
-    <div className="min-h-screen pt-20 sm:pt-24 pb-20">
+    <div className="min-h-screen pt-24 sm:pt-28 pb-20">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12">
           {/* Image Gallery */}

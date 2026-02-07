@@ -11,7 +11,7 @@ export default function Header() {
   const itemCount = lines.reduce((acc, line) => acc + line.quantity, 0);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-cream/95 backdrop-blur-sm border-b-3 border-true-black">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-cream backdrop-blur-sm border-b-3 border-true-black shadow-sm">
       <nav className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 sm:h-24">
           {/* Logo */}
@@ -20,23 +20,25 @@ export default function Header() {
             className="flex items-center gap-3 group"
           >
             {/* Heart+Bagel icon only on mobile */}
-            <div className="relative w-10 h-10 sm:hidden">
+            <div className="relative w-12 h-12 sm:hidden">
               <Image
                 src="/images/logo-heart-bagel.png"
                 alt="Bagel Bros"
                 fill
-                className="object-contain group-hover:opacity-80 transition-opacity duration-300"
+                className="object-contain drop-shadow-sm group-hover:opacity-80 transition-opacity duration-300"
                 priority
+                style={{ filter: 'contrast(1.1) brightness(0.95)' }}
               />
             </div>
             {/* Horizontal logo on desktop */}
-            <div className="relative hidden sm:block w-52 lg:w-64 h-10">
+            <div className="relative hidden sm:block w-56 lg:w-64 h-12">
               <Image
                 src="/images/logo-heart-horizontal.png"
                 alt="Bagel Bros"
                 fill
-                className="object-contain object-left group-hover:opacity-80 transition-opacity duration-300"
+                className="object-contain object-left drop-shadow-sm group-hover:opacity-80 transition-opacity duration-300"
                 priority
+                style={{ filter: 'contrast(1.1) brightness(0.95)' }}
               />
             </div>
           </Link>

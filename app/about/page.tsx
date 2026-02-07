@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen pt-20 sm:pt-24">
+    <div className="min-h-screen pt-24 sm:pt-28">
       {/* Hero with Background Image */}
       <section className="py-20 sm:py-32 bg-true-black text-cream relative overflow-hidden">
         {/* Background Image */}

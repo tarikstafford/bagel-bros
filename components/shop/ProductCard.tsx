@@ -25,7 +25,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       className="group block"
     >
       {/* Image Container */}
-      <div className="relative aspect-[3/4] bg-true-black/5 border-3 border-true-black overflow-hidden mb-4">
+      <div className="relative aspect-square bg-true-black/5 border-3 border-true-black overflow-hidden mb-4">
         {image ? (
           <Image
             src={image.url}

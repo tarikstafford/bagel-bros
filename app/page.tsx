@@ -8,7 +8,7 @@ export default function HomePage() {
   const dropConfig = getDropConfig();
 
   return (
-    <div className="min-h-screen pt-20 sm:pt-24">
+    <div className="min-h-screen pt-24 sm:pt-28">
       {/* Hero Section - Brutalist Impact */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden grain bg-cream">
         {/* Background Video/Image */}
@@ -117,7 +117,7 @@ export default function HomePage() {
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Video/Image */}
-            <div className="relative aspect-[4/3] border-3 border-cream overflow-hidden group">
+            <div className="relative aspect-video border-3 border-cream overflow-hidden group">
               <Image
                 src="/images/lifestyle-section.jpg"
                 alt="Padel players lifestyle"
@@ -225,7 +225,7 @@ export default function HomePage() {
             </div>
 
             {/* Image */}
-            <div className="relative aspect-[4/5] border-3 border-true-black overflow-hidden group">
+            <div className="relative aspect-[3/4] border-3 border-true-black overflow-hidden group">
               <Image
                 src="/images/brand-story.jpg"
                 alt="Padel player in action"
@@ -248,7 +248,7 @@ export default function HomePage() {
               <br />
               <span className="text-bagel-tan">DROP</span>
             </h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-4xl mx-auto">
               {[
                 '/images/product-1.jpg',
                 '/images/product-2.jpg',
@@ -323,7 +323,7 @@ export default function HomePage() {
           </h2>
 
           {/* Instagram-style grid */}
-          <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-12">
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-12 max-w-3xl mx-auto">
             {[
               '/images/community-1.jpg',
               '/images/community-2.jpg',
