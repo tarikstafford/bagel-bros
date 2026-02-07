@@ -42,7 +42,14 @@ export default function CartItem({ line }: CartItemProps) {
       setTotalAmount(cart.cost.totalAmount.amount);
     } catch (error) {
       console.error('Update quantity error:', error);
-      toast.error('Failed to update quantity');
+      toast.error('Failed to update', {
+        style: {
+          background: '#0A0A0A',
+          color: '#FEFEFE',
+          fontFamily: 'Space Mono, monospace',
+          fontSize: '14px',
+        },
+      });
     } finally {
       setIsUpdating(false);
     }
@@ -68,10 +75,24 @@ export default function CartItem({ line }: CartItemProps) {
       const cart = data.cartLinesRemove.cart;
       setLines(cart.lines.edges.map((edge: any) => edge.node));
       setTotalAmount(cart.cost.totalAmount.amount);
-      toast.success('Item removed from cart');
+      toast.success('Removed from cart', {
+        style: {
+          background: '#D4A574',
+          color: '#0A0A0A',
+          fontFamily: 'Space Mono, monospace',
+          fontSize: '14px',
+        },
+      });
     } catch (error) {
       console.error('Remove item error:', error);
-      toast.error('Failed to remove item');
+      toast.error('Failed to remove', {
+        style: {
+          background: '#0A0A0A',
+          color: '#FEFEFE',
+          fontFamily: 'Space Mono, monospace',
+          fontSize: '14px',
+        },
+      });
     } finally {
       setIsUpdating(false);
     }
@@ -81,70 +102,81 @@ export default function CartItem({ line }: CartItemProps) {
   const lineTotal = price * line.quantity;
 
   return (
-    <div className="flex gap-4 p-4 border-2 border-true-black/10 rounded-lg">
-      {/* Product Image */}
-      <div className="relative w-20 h-20 flex-shrink-0 bg-cream rounded-lg overflow-hidden">
-        <Image
-          src={line.merchandise.product.featuredImage.url}
-          alt={line.merchandise.product.title}
-          fill
-          className="object-cover"
-          sizes="80px"
-        />
-      </div>
+    <div className="border-3 border-true-black bg-cream/50 p-4 relative">
+      <div className="flex gap-4">
+        {/* Product Image */}
+        <div className="relative w-24 h-32 flex-shrink-0 bg-true-black/5 border-2 border-true-black overflow-hidden">
+          <Image
+            src={line.merchandise.product.featuredImage.url}
+            alt={line.merchandise.product.title}
+            fill
+            className="object-cover"
+            sizes="96px"
+          />
+        </div>
 
-      {/* Product Info */}
-      <div className="flex-1 min-w-0">
-        <h3 className="font-medium text-sm sm:text-base mb-1 truncate">
-          {line.merchandise.product.title}
-        </h3>
-        <p className="text-xs sm:text-sm text-true-black/60 mb-2">
-          Size: {line.merchandise.title}
-        </p>
-
-        {/* Quantity Controls */}
-        <div className="flex items-center gap-3">
-          <div className="flex items-center border-2 border-true-black/20 rounded-lg">
-            <button
-              onClick={() => updateQuantity(line.quantity - 1)}
-              disabled={isUpdating || line.quantity <= 1}
-              className="px-3 py-1 hover:bg-true-black/5 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-              aria-label="Decrease quantity"
-            >
-              −
-            </button>
-            <span className="px-3 py-1 min-w-[2rem] text-center font-medium">
-              {line.quantity}
-            </span>
-            <button
-              onClick={() => updateQuantity(line.quantity + 1)}
-              disabled={isUpdating}
-              className="px-3 py-1 hover:bg-true-black/5 transition-colors disabled:opacity-30"
-              aria-label="Increase quantity"
-            >
-              +
-            </button>
+        {/* Product Info */}
+        <div className="flex-1 min-w-0 flex flex-col justify-between">
+          <div>
+            <h3 className="font-display text-xl mb-1 truncate">
+              {line.merchandise.product.title}
+            </h3>
+            <p className="font-mono text-xs text-true-black/60 mb-3">
+              Size {line.merchandise.title}
+            </p>
           </div>
 
-          <button
-            onClick={removeItem}
-            disabled={isUpdating}
-            className="text-xs text-bagel-tan hover:underline disabled:opacity-50"
-          >
-            Remove
-          </button>
+          {/* Bottom Row */}
+          <div className="flex items-end justify-between gap-4">
+            {/* Quantity Controls */}
+            <div className="flex items-center border-2 border-true-black">
+              <button
+                onClick={() => updateQuantity(line.quantity - 1)}
+                disabled={isUpdating || line.quantity <= 1}
+                className="w-8 h-8 flex items-center justify-center hover:bg-true-black hover:text-cream transition-colors disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:bg-transparent disabled:hover:text-true-black"
+                aria-label="Decrease quantity"
+              >
+                <span className="text-lg">−</span>
+              </button>
+              <span className="w-10 h-8 flex items-center justify-center font-mono text-sm font-bold border-x-2 border-true-black">
+                {line.quantity}
+              </span>
+              <button
+                onClick={() => updateQuantity(line.quantity + 1)}
+                disabled={isUpdating}
+                className="w-8 h-8 flex items-center justify-center hover:bg-true-black hover:text-cream transition-colors disabled:opacity-30"
+                aria-label="Increase quantity"
+              >
+                <span className="text-lg">+</span>
+              </button>
+            </div>
+
+            {/* Price */}
+            <div className="text-right">
+              <div className="font-mono text-lg font-bold">
+                ${lineTotal.toFixed(2)}
+              </div>
+              {line.quantity > 1 && (
+                <div className="font-mono text-[10px] text-true-black/50">
+                  ${price.toFixed(2)} each
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Price */}
-      <div className="text-right flex-shrink-0">
-        <p className="font-medium">${lineTotal.toFixed(2)}</p>
-        {line.quantity > 1 && (
-          <p className="text-xs text-true-black/60">
-            ${price.toFixed(2)} each
-          </p>
-        )}
-      </div>
+      {/* Remove Button */}
+      <button
+        onClick={removeItem}
+        disabled={isUpdating}
+        className="absolute top-2 right-2 w-6 h-6 flex items-center justify-center hover:bg-true-black hover:text-cream transition-colors disabled:opacity-50"
+        aria-label="Remove item"
+      >
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </button>
     </div>
   );
 }

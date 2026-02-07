@@ -1,70 +1,224 @@
 export default function AboutPage() {
   return (
-    <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
-      <h1 className="font-display text-4xl sm:text-6xl mb-8 text-center">
-        The Bagel Bros Manifesto
-      </h1>
-
-      <div className="prose prose-lg max-w-none space-y-6 text-lg">
-        <p className="text-center text-xl text-bagel-tan font-display mb-12">
-          Getting bageled is not a failure. It&apos;s a lifestyle.
-        </p>
-
-        <div className="bg-cream border-2 border-true-black/10 rounded-lg p-8 mb-8">
-          <h2 className="font-display text-2xl mb-4">What is a bagel?</h2>
-          <p className="text-true-black/80">
-            In padel (and tennis), getting &quot;bageled&quot; means losing a set 6-0.
-            It&apos;s the ultimate scoreline. The perfect circle of defeat.
-            And somehow, it keeps happening to us.
-          </p>
+    <div className="min-h-screen pt-20 sm:pt-24">
+      {/* Hero */}
+      <section className="py-20 sm:py-32 bg-true-black text-cream relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5">
+          <div className="font-display text-[30vw] leading-none absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 whitespace-nowrap">
+            6-0 6-0 6-0
+          </div>
         </div>
 
-        <h2 className="font-display text-3xl mt-12 mb-4">Our Story</h2>
-        <p>
-          We&apos;re not pros. We&apos;re not even that good. But we show up to the court,
-          racket in hand, ready to get absolutely destroyed by people who actually know
-          what they&apos;re doing.
-        </p>
-
-        <p>
-          After the hundredth 6-0 loss, we realized something: if you can&apos;t beat them,
-          at least look good losing. Hence, Bagel Bros was born.
-        </p>
-
-        <h2 className="font-display text-3xl mt-12 mb-4">The Mission</h2>
-        <p>
-          Create premium streetwear for people who embrace the bagel. No participation trophies.
-          No &quot;good try&quot; platitudes. Just honest, high-quality merch that says:
-          <span className="font-display text-bagel-tan"> I got bageled and I&apos;m still here.</span>
-        </p>
-
-        <div className="bg-bagel-tan/10 border-2 border-bagel-tan rounded-lg p-8 my-12">
-          <h2 className="font-display text-2xl mb-4">The 6-0 Club Pledge</h2>
-          <ul className="space-y-2 text-true-black/80">
-            <li>✓ We show up even when we know we&apos;ll lose</li>
-            <li>✓ We laugh at our unforced errors (after crying a little)</li>
-            <li>✓ We wear our bagels with pride</li>
-            <li>✓ We never quit, even when we probably should</li>
-            <li>✓ We look damn good doing it</li>
-          </ul>
-        </div>
-
-        <h2 className="font-display text-3xl mt-12 mb-4">Limited Drops. No Restocks.</h2>
-        <p>
-          Just like that perfect 6-0 scoreline, each drop is a once-in-a-lifetime event.
-          When it&apos;s gone, it&apos;s gone forever. No mass production. No selling out to big box stores.
-          Just small batches of premium gear for people who get it.
-        </p>
-
-        <div className="text-center mt-16 pt-8 border-t-2 border-true-black/10">
-          <p className="font-display text-2xl mb-4">
-            Welcome to the Club. 🥯
+        <div className="relative z-10 max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="font-mono text-xs uppercase tracking-wider bg-bagel-tan text-true-black px-4 py-2 inline-block mb-8">
+            The Manifesto
+          </div>
+          <h1 className="font-display text-display-xl mb-8 max-w-5xl mx-auto">
+            THE
+            <br />
+            BAGEL BROS
+            <br />
+            <span className="text-bagel-tan">MANIFESTO</span>
+          </h1>
+          <p className="font-mono text-lg sm:text-xl max-w-2xl mx-auto text-cream/80">
+            For those who show up, get demolished, and come back with a smile
           </p>
-          <p className="text-true-black/60">
+        </div>
+      </section>
+
+      {/* What is a Bagel */}
+      <section className="py-20 sm:py-32 bg-bagel-tan">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-display text-display-md mb-8 text-center">
+              WHAT IS A BAGEL?
+            </h2>
+            <div className="border-brutal bg-cream p-8 sm:p-12">
+              <p className="font-mono text-base sm:text-lg leading-relaxed text-center">
+                In padel (and tennis), getting &quot;bageled&quot; means losing a set 6-0.
+                It&apos;s the ultimate scoreline. The perfect circle of defeat. A donut. A zero.
+                And somehow, it keeps happening to us.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Story */}
+      <section className="py-20 sm:py-32 bg-cream">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
+            {/* Left Column */}
+            <div>
+              <h2 className="font-display text-display-md mb-12">
+                OUR
+                <br />
+                STORY
+              </h2>
+
+              <div className="space-y-8 font-mono text-sm sm:text-base leading-relaxed">
+                <p>
+                  We&apos;re not pros. We&apos;re not even that good. But we show up to the court,
+                  racket in hand, ready to get absolutely destroyed by people who actually know
+                  what they&apos;re doing.
+                </p>
+
+                <p>
+                  After the hundredth 6-0 loss, we realized something profound: getting bageled
+                  isn&apos;t about winning or losing. It&apos;s about embracing the absurdity.
+                  The inevitability. The pure, unadulterated joy of showing up anyway.
+                </p>
+
+                <p className="text-bagel-tan font-bold">
+                  If you can&apos;t beat them, at least look good losing.
+                </p>
+              </div>
+            </div>
+
+            {/* Right Column */}
+            <div className="space-y-6">
+              {/* Stat Block 1 */}
+              <div className="border-brutal bg-true-black text-cream p-8">
+                <div className="font-display text-6xl mb-2">100%</div>
+                <div className="font-mono text-sm uppercase tracking-wider text-cream/60">
+                  Acceptance Rate of Defeat
+                </div>
+              </div>
+
+              {/* Stat Block 2 */}
+              <div className="border-brutal bg-bagel-tan p-8">
+                <div className="font-display text-6xl mb-2">0</div>
+                <div className="font-mono text-sm uppercase tracking-wider text-true-black/60">
+                  Wins Expected (And We&apos;re Fine With That)
+                </div>
+              </div>
+
+              {/* Stat Block 3 */}
+              <div className="border-brutal bg-cream border-true-black p-8">
+                <div className="font-display text-6xl mb-2">6-0</div>
+                <div className="font-mono text-sm uppercase tracking-wider text-true-black/60">
+                  The Score That Started It All
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Mission */}
+      <section className="py-20 sm:py-32 bg-true-black text-cream">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-display-lg mb-16 text-center">
+            THE
+            <br />
+            <span className="text-bagel-tan">MISSION</span>
+          </h2>
+
+          <div className="max-w-3xl mx-auto space-y-8 font-mono text-base sm:text-lg leading-relaxed text-cream/80">
+            <p className="text-center text-xl sm:text-2xl text-cream">
+              Create premium streetwear for people who embrace the bagel.
+            </p>
+
+            <p>
+              No participation trophies. No &quot;good try&quot; platitudes. Just honest,
+              high-quality merch that says: <span className="text-bagel-tan font-bold">I got bageled
+              and I&apos;m still here.</span>
+            </p>
+
+            <p>
+              We make clothes for the eternal optimists. The ones who book another court time
+              before the current match even ends. The ones who know deep down they&apos;re going
+              to lose 6-0 again but show up anyway because it&apos;s about the friends we get
+              destroyed with along the way.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* The Pledge */}
+      <section className="py-20 sm:py-32 bg-bagel-tan">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="font-display text-display-md mb-12 text-center">
+              THE 6-0 CLUB PLEDGE
+            </h2>
+
+            <div className="border-brutal bg-cream p-8 sm:p-12">
+              <ul className="space-y-6 font-mono text-sm sm:text-base">
+                <li className="flex items-start gap-4">
+                  <div className="w-8 h-8 border-3 border-true-black bg-bagel-tan flex-shrink-0 flex items-center justify-center font-display text-xl">
+                    ✓
+                  </div>
+                  <span>We show up even when we know we&apos;ll lose</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-8 h-8 border-3 border-true-black bg-bagel-tan flex-shrink-0 flex items-center justify-center font-display text-xl">
+                    ✓
+                  </div>
+                  <span>We laugh at our unforced errors (after crying a little)</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-8 h-8 border-3 border-true-black bg-bagel-tan flex-shrink-0 flex items-center justify-center font-display text-xl">
+                    ✓
+                  </div>
+                  <span>We wear our bagels with pride</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-8 h-8 border-3 border-true-black bg-bagel-tan flex-shrink-0 flex items-center justify-center font-display text-xl">
+                    ✓
+                  </div>
+                  <span>We never quit, even when we probably should</span>
+                </li>
+                <li className="flex items-start gap-4">
+                  <div className="w-8 h-8 border-3 border-true-black bg-bagel-tan flex-shrink-0 flex items-center justify-center font-display text-xl">
+                    ✓
+                  </div>
+                  <span className="font-bold">We look damn good doing it</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Limited Drops */}
+      <section className="py-20 sm:py-32 bg-cream">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="font-display text-display-lg mb-8">
+            LIMITED DROPS.
+            <br />
+            <span className="text-bagel-tan">NO RESTOCKS.</span>
+          </h2>
+
+          <p className="font-mono text-base sm:text-lg max-w-2xl mx-auto mb-12 leading-relaxed">
+            Just like that perfect 6-0 scoreline, each drop is a once-in-a-lifetime event.
+            When it&apos;s gone, it&apos;s gone forever. No mass production. No selling out to big box stores.
+            Just small batches of premium gear for people who get it.
+          </p>
+
+          <div className="inline-block border-brutal bg-true-black text-cream px-12 py-6">
+            <p className="font-display text-3xl sm:text-4xl">
+              IF YOU KNOW,
+              <br />
+              YOU KNOW. 🥯
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-20 sm:py-32 bg-true-black text-cream text-center">
+        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="font-display text-display-lg mb-6">
+            WELCOME TO
+            <br />
+            <span className="text-bagel-tan">THE CLUB</span>
+          </h2>
+          <p className="font-mono text-sm text-cream/60">
             See you on the court (where we&apos;ll probably lose)
           </p>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

@@ -50,13 +50,9 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
 
   if (!isMounted || !timeLeft) {
     return (
-      <div className="grid grid-cols-4 gap-4 max-w-2xl mx-auto">
+      <div className="grid grid-cols-4 gap-3 sm:gap-4 max-w-3xl">
         {[...Array(4)].map((_, i) => (
-          <div key={i} className="text-center">
-            <div className="bg-cream border-2 border-true-black rounded-lg p-6 animate-pulse">
-              <div className="h-16 bg-true-black/10 rounded"></div>
-            </div>
-          </div>
+          <div key={i} className="aspect-square border-3 border-true-black bg-cream/50 animate-pulse"></div>
         ))}
       </div>
     );
@@ -70,17 +66,26 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
   ];
 
   return (
-    <div className="grid grid-cols-4 gap-2 sm:gap-4 max-w-2xl mx-auto">
+    <div className="grid grid-cols-4 gap-3 sm:gap-4 max-w-3xl">
       {timeUnits.map((unit, index) => (
-        <div key={index} className="text-center">
-          <div className="bg-cream border-2 border-true-black rounded-lg p-3 sm:p-6">
-            <div className="font-display text-3xl sm:text-5xl md:text-6xl">
+        <div
+          key={index}
+          className="relative aspect-square border-brutal bg-cream group hover:bg-bagel-tan transition-colors duration-300"
+        >
+          {/* Time Value */}
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-2">
+            <div className="font-display text-4xl sm:text-5xl lg:text-6xl leading-none">
               {String(unit.value).padStart(2, '0')}
             </div>
-            <div className="text-xs sm:text-sm font-medium mt-1 sm:mt-2 text-true-black/70">
+            <div className="font-mono text-[10px] sm:text-xs uppercase tracking-wider mt-2 opacity-60">
               {unit.label}
             </div>
           </div>
+
+          {/* Pulsing Indicator for Seconds */}
+          {unit.label === 'Secs' && (
+            <div className="absolute top-2 right-2 w-2 h-2 bg-bagel-tan rounded-full animate-pulse"></div>
+          )}
         </div>
       ))}
     </div>

@@ -11,7 +11,6 @@ export default function ProductCard({ product }: ProductCardProps) {
   const price = parseFloat(product.priceRange.minVariantPrice.amount);
   const currency = product.priceRange.minVariantPrice.currencyCode;
 
-  // Calculate total available inventory
   const totalInventory = product.variants.edges.reduce(
     (sum, variant) => sum + variant.node.quantityAvailable,
     0
@@ -23,48 +22,61 @@ export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link
       href={`/shop/${product.handle}`}
-      className="group relative bg-white border-2 border-true-black/10 rounded-lg overflow-hidden hover:border-bagel-tan transition-all hover:shadow-lg"
+      className="group block"
     >
-      {/* Product Image */}
-      <div className="aspect-square relative bg-cream overflow-hidden">
+      {/* Image Container */}
+      <div className="relative aspect-[3/4] bg-true-black/5 border-3 border-true-black overflow-hidden mb-4">
         {image ? (
           <Image
             src={image.url}
             alt={image.altText || product.title}
             fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <span className="text-true-black/30 font-display text-2xl">
-              No Image
-            </span>
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="font-display text-6xl text-true-black/10">6-0</div>
           </div>
         )}
 
-        {/* Stock Badge */}
+        {/* Status Badge */}
         {isSoldOut && (
-          <div className="absolute top-4 right-4 bg-true-black text-true-white px-3 py-1 rounded-full text-xs font-bold">
-            SOLD OUT
+          <div className="absolute top-4 right-4 bg-true-black text-cream px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider">
+            Sold Out
           </div>
         )}
         {isLowStock && !isSoldOut && (
-          <div className="absolute top-4 right-4 bg-bagel-tan text-true-black px-3 py-1 rounded-full text-xs font-bold">
-            ONLY {totalInventory} LEFT
+          <div className="absolute top-4 right-4 bg-bagel-tan text-true-black px-4 py-2 font-mono text-xs font-bold uppercase tracking-wider animate-pulse">
+            Only {totalInventory} Left
           </div>
         )}
+
+        {/* Hover Overlay */}
+        <div className="absolute inset-0 bg-bagel-tan/0 group-hover:bg-bagel-tan/20 transition-colors duration-300"></div>
+
+        {/* Quick View Hint */}
+        <div className="absolute inset-x-0 bottom-0 bg-true-black/90 text-cream py-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+          <div className="font-mono text-xs uppercase tracking-wider text-center">
+            View Details →
+          </div>
+        </div>
       </div>
 
       {/* Product Info */}
-      <div className="p-4 sm:p-6">
-        <h3 className="font-display text-lg sm:text-xl mb-2 group-hover:text-bagel-tan transition-colors">
+      <div className="space-y-2">
+        <h3 className="font-display text-2xl sm:text-3xl group-hover:text-bagel-tan transition-colors duration-300">
           {product.title}
         </h3>
-        <p className="text-sm sm:text-base font-medium">
-          {currency === 'USD' ? '$' : currency}
-          {price.toFixed(2)}
-        </p>
+        <div className="flex items-center justify-between">
+          <div className="font-mono text-sm font-bold">
+            {currency === 'USD' ? '$' : currency}
+            {price.toFixed(2)}
+          </div>
+          <div className="font-mono text-xs uppercase tracking-wider text-true-black/50">
+            {isSoldOut ? 'Sold Out' : 'Available'}
+          </div>
+        </div>
       </div>
     </Link>
   );

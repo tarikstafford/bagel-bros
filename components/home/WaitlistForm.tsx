@@ -16,7 +16,14 @@ export default function WaitlistForm({ dropNumber = '001' }: WaitlistFormProps) 
     e.preventDefault();
 
     if (!email) {
-      toast.error('Please enter your email');
+      toast.error('Enter your email', {
+        style: {
+          background: '#0A0A0A',
+          color: '#FEFEFE',
+          fontFamily: 'Space Mono, monospace',
+          fontSize: '14px',
+        },
+      });
       return;
     }
 
@@ -36,12 +43,34 @@ export default function WaitlistForm({ dropNumber = '001' }: WaitlistFormProps) 
       if (response.ok) {
         setIsSubmitted(true);
         setEmail('');
-        toast.success("You're officially in the 6-0 Club! 🥯");
+        toast.success("You're in the 6-0 Club! 🥯", {
+          style: {
+            background: '#D4A574',
+            color: '#0A0A0A',
+            fontFamily: 'Space Mono, monospace',
+            fontSize: '14px',
+            fontWeight: 'bold',
+          },
+        });
       } else {
-        toast.error(data.error || 'Something went wrong. Try again.');
+        toast.error(data.error || 'Something went wrong', {
+          style: {
+            background: '#0A0A0A',
+            color: '#FEFEFE',
+            fontFamily: 'Space Mono, monospace',
+            fontSize: '14px',
+          },
+        });
       }
     } catch (error) {
-      toast.error('Failed to join waitlist. Please try again.');
+      toast.error('Failed to join waitlist', {
+        style: {
+          background: '#0A0A0A',
+          color: '#FEFEFE',
+          fontFamily: 'Space Mono, monospace',
+          fontSize: '14px',
+        },
+      });
     } finally {
       setIsLoading(false);
     }
@@ -49,41 +78,42 @@ export default function WaitlistForm({ dropNumber = '001' }: WaitlistFormProps) 
 
   if (isSubmitted) {
     return (
-      <div className="bg-bagel-tan/10 border-2 border-bagel-tan rounded-lg p-8 text-center">
-        <h3 className="font-display text-2xl sm:text-3xl mb-4">
-          Welcome to the Club! 🥯
-        </h3>
-        <p className="text-lg mb-2">
-          You&apos;re on the list for Drop {dropNumber}.
-        </p>
-        <p className="text-sm text-true-black/70">
-          We&apos;ll email you when it&apos;s go time.
-        </p>
+      <div className="border-brutal bg-bagel-tan p-8 sm:p-12 max-w-2xl mx-auto">
+        <div className="text-center">
+          <div className="font-display text-5xl sm:text-6xl mb-4 text-true-black">
+            YOU&apos;RE IN
+          </div>
+          <p className="font-mono text-sm text-true-black/80">
+            Welcome to the 6-0 Club, Drop {dropNumber}
+            <br />
+            We&apos;ll email you when it&apos;s go time.
+          </p>
+        </div>
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-md mx-auto">
-      <div className="flex flex-col sm:flex-row gap-3">
+    <form onSubmit={handleSubmit} className="max-w-2xl mx-auto">
+      <div className="flex flex-col sm:flex-row gap-4">
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="your@email.com"
           required
-          className="flex-1 px-6 py-4 border-2 border-true-black rounded-lg focus:outline-none focus:ring-2 focus:ring-bagel-tan focus:border-transparent text-lg"
+          className="flex-1 px-6 py-5 border-3 border-cream bg-cream/10 text-cream placeholder:text-cream/40 font-mono text-sm focus:outline-none focus:border-bagel-tan transition-colors"
           disabled={isLoading}
         />
         <button
           type="submit"
           disabled={isLoading}
-          className="px-8 py-4 bg-true-black text-true-white font-display text-lg rounded-lg hover:bg-bagel-tan hover:text-true-black transition-colors disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
+          className="px-8 sm:px-12 py-5 bg-bagel-tan hover:bg-cream text-true-black font-mono text-sm font-bold uppercase tracking-wider transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed border-3 border-bagel-tan whitespace-nowrap"
         >
           {isLoading ? 'Joining...' : 'Join Waitlist'}
         </button>
       </div>
-      <p className="text-xs text-true-black/50 text-center mt-3">
+      <p className="font-mono text-xs text-cream/40 text-center mt-4">
         No spam. Just drops. Unsubscribe anytime.
       </p>
     </form>

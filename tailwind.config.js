@@ -14,13 +14,23 @@ module.exports = {
         'true-white': '#FEFEFE',
       },
       fontFamily: {
-        'display': ['var(--font-archivo-black)', 'sans-serif'],
-        'body': ['var(--font-inter)', 'sans-serif'],
+        'display': ['Bebas Neue', 'sans-serif'],
+        'mono': ['Space Mono', 'monospace'],
       },
       fontSize: {
-        'display-xl': ['5rem', { lineHeight: '1', fontWeight: '900' }],
-        'display-lg': ['3.5rem', { lineHeight: '1.1', fontWeight: '900' }],
-        'display-md': ['2.5rem', { lineHeight: '1.2', fontWeight: '900' }],
+        'display-xl': ['clamp(4rem, 12vw, 10rem)', { lineHeight: '0.9', fontWeight: '400' }],
+        'display-lg': ['clamp(3rem, 8vw, 6rem)', { lineHeight: '0.9', fontWeight: '400' }],
+        'display-md': ['clamp(2rem, 5vw, 4rem)', { lineHeight: '0.95', fontWeight: '400' }],
+        'display-sm': ['clamp(1.5rem, 3vw, 2.5rem)', { lineHeight: '1', fontWeight: '400' }],
+      },
+      animation: {
+        'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'spin-slow': 'spin 8s linear infinite',
+      },
+      boxShadow: {
+        'brutal': '6px 6px 0 0 #0A0A0A',
+        'brutal-lg': '10px 10px 0 0 #0A0A0A',
+        'brutal-hover': '8px 8px 0 0 #0A0A0A',
       },
     },
   },
