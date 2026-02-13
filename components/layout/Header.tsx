@@ -17,28 +17,18 @@ export default function Header() {
           {/* Logo + Brand - Left Side */}
           <Link
             href="/"
-            className="flex items-center gap-3 sm:gap-4 group flex-shrink-0"
+            className="flex items-center gap-3 group flex-shrink-0"
           >
-            {/* Logo icon with border */}
-            <div className="relative w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 border-3 border-true-black p-2 bg-white group-hover:bg-bagel-tan transition-colors duration-300">
+            {/* Horizontal logo */}
+            <div className="relative w-48 sm:w-56 h-12 sm:h-14 flex-shrink-0">
               <Image
-                src="/images/logo-heart-bagel.png"
-                alt="Bagel Bros Logo"
+                src="/images/logo-heart-horizontal.png"
+                alt="Bagel Bros"
                 fill
-                className="object-contain p-1"
+                className="object-contain object-left group-hover:opacity-80 transition-opacity"
                 priority
-                sizes="64px"
+                sizes="(max-width: 640px) 192px, 224px"
               />
-            </div>
-
-            {/* Brand text */}
-            <div className="flex flex-col">
-              <h1 className="font-display text-2xl sm:text-3xl md:text-4xl tracking-tight leading-none group-hover:text-bagel-tan transition-colors duration-300">
-                BAGEL BROS
-              </h1>
-              <span className="font-mono text-[10px] sm:text-xs uppercase tracking-widest text-true-black/60 mt-0.5">
-                6-0 Club
-              </span>
             </div>
           </Link>
 
@@ -66,7 +56,7 @@ export default function Header() {
                 className="relative group flex-shrink-0"
                 aria-label="Open cart"
               >
-                <div className="relative border-3 border-true-black p-2.5 sm:p-3 bg-white group-hover:bg-bagel-tan transition-colors duration-300">
+                <div className="relative border-3 border-true-black p-3 bg-white group-hover:bg-bagel-tan transition-colors duration-300">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -82,7 +72,7 @@ export default function Header() {
                     />
                   </svg>
                   {itemCount > 0 && (
-                    <span className="absolute -top-2 -right-2 bg-true-black text-cream text-xs font-mono font-bold w-7 h-7 flex items-center justify-center border-3 border-true-black">
+                    <span className="absolute -top-2 -right-2 bg-true-black text-cream text-xs font-mono font-bold w-8 h-8 flex items-center justify-center border-3 border-true-black">
                       {itemCount}
                     </span>
                   )}

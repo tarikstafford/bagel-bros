@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { CartLine, useCartStore } from '@/lib/store/cart-store';
 import { storefrontClient } from '@/lib/shopify/client';
 import { UPDATE_CART_LINES, REMOVE_FROM_CART } from '@/lib/shopify/mutations';
-import toast from 'react-hot-toast';
+import { toast } from '@/lib/utils/toast-config';
 
 interface CartItemProps {
   line: CartLine;
@@ -42,14 +42,7 @@ export default function CartItem({ line }: CartItemProps) {
       setTotalAmount(cart.cost.totalAmount.amount);
     } catch (error) {
       console.error('Update quantity error:', error);
-      toast.error('Failed to update', {
-        style: {
-          background: '#0A0A0A',
-          color: '#FEFEFE',
-          fontFamily: 'Space Mono, monospace',
-          fontSize: '14px',
-        },
-      });
+      toast.error('Failed to update');
     } finally {
       setIsUpdating(false);
     }
@@ -75,24 +68,10 @@ export default function CartItem({ line }: CartItemProps) {
       const cart = data.cartLinesRemove.cart;
       setLines(cart.lines.edges.map((edge: any) => edge.node));
       setTotalAmount(cart.cost.totalAmount.amount);
-      toast.success('Removed from cart', {
-        style: {
-          background: '#D4A574',
-          color: '#0A0A0A',
-          fontFamily: 'Space Mono, monospace',
-          fontSize: '14px',
-        },
-      });
+      toast.success('Removed from cart');
     } catch (error) {
       console.error('Remove item error:', error);
-      toast.error('Failed to remove', {
-        style: {
-          background: '#0A0A0A',
-          color: '#FEFEFE',
-          fontFamily: 'Space Mono, monospace',
-          fontSize: '14px',
-        },
-      });
+      toast.error('Failed to remove');
     } finally {
       setIsUpdating(false);
     }
@@ -129,7 +108,7 @@ export default function CartItem({ line }: CartItemProps) {
           {/* Bottom Row */}
           <div className="flex items-end justify-between gap-4">
             {/* Quantity Controls */}
-            <div className="flex items-center border-2 border-true-black">
+            <div className="flex items-center border-3 border-true-black">
               <button
                 onClick={() => updateQuantity(line.quantity - 1)}
                 disabled={isUpdating || line.quantity <= 1}
@@ -138,7 +117,7 @@ export default function CartItem({ line }: CartItemProps) {
               >
                 <span className="text-lg">−</span>
               </button>
-              <span className="w-10 h-8 flex items-center justify-center font-mono text-sm font-bold border-x-2 border-true-black">
+              <span className="w-10 h-8 flex items-center justify-center font-mono text-sm font-bold border-x-3 border-true-black">
                 {line.quantity}
               </span>
               <button
@@ -157,7 +136,7 @@ export default function CartItem({ line }: CartItemProps) {
                 ${lineTotal.toFixed(2)}
               </div>
               {line.quantity > 1 && (
-                <div className="font-mono text-[10px] text-true-black/50">
+                <div className="font-mono text-xs text-true-black/50">
                   ${price.toFixed(2)} each
                 </div>
               )}

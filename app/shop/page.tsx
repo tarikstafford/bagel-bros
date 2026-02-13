@@ -29,7 +29,7 @@ export default async function ShopPage() {
   const products = await getProducts();
 
   return (
-    <div className="min-h-screen pt-36 sm:pt-40 pb-20">
+    <div className="min-h-screen pt-32 sm:pt-36 pb-20">
       {/* Hero Header */}
       <section className="bg-true-black text-cream py-16 sm:py-20 mb-16 sm:mb-20">
         <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">

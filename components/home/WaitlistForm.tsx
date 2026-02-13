@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import toast from 'react-hot-toast';
+import { toast } from '@/lib/utils/toast-config';
 
 interface WaitlistFormProps {
   dropNumber?: string;
@@ -16,14 +16,7 @@ export default function WaitlistForm({ dropNumber = '001' }: WaitlistFormProps) 
     e.preventDefault();
 
     if (!email) {
-      toast.error('Enter your email', {
-        style: {
-          background: '#0A0A0A',
-          color: '#FEFEFE',
-          fontFamily: 'Space Mono, monospace',
-          fontSize: '14px',
-        },
-      });
+      toast.error('Enter your email');
       return;
     }
 
@@ -43,34 +36,12 @@ export default function WaitlistForm({ dropNumber = '001' }: WaitlistFormProps) 
       if (response.ok) {
         setIsSubmitted(true);
         setEmail('');
-        toast.success("You're in the 6-0 Club! 🥯", {
-          style: {
-            background: '#D4A574',
-            color: '#0A0A0A',
-            fontFamily: 'Space Mono, monospace',
-            fontSize: '14px',
-            fontWeight: 'bold',
-          },
-        });
+        toast.success("You're in the 6-0 Club! 🥯");
       } else {
-        toast.error(data.error || 'Something went wrong', {
-          style: {
-            background: '#0A0A0A',
-            color: '#FEFEFE',
-            fontFamily: 'Space Mono, monospace',
-            fontSize: '14px',
-          },
-        });
+        toast.error(data.error || 'Something went wrong');
       }
     } catch (error) {
-      toast.error('Failed to join waitlist', {
-        style: {
-          background: '#0A0A0A',
-          color: '#FEFEFE',
-          fontFamily: 'Space Mono, monospace',
-          fontSize: '14px',
-        },
-      });
+      toast.error('Failed to join waitlist');
     } finally {
       setIsLoading(false);
     }
@@ -108,7 +79,7 @@ export default function WaitlistForm({ dropNumber = '001' }: WaitlistFormProps) 
         <button
           type="submit"
           disabled={isLoading}
-          className="px-8 sm:px-12 py-5 bg-bagel-tan hover:bg-cream text-true-black font-mono text-sm font-bold uppercase tracking-wider transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed border-3 border-bagel-tan whitespace-nowrap"
+          className="px-8 sm:px-12 py-5 border-brutal border-brutal-hover bg-bagel-tan text-true-black font-mono text-sm font-bold uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed whitespace-nowrap"
         >
           {isLoading ? 'Joining...' : 'Join Waitlist'}
         </button>

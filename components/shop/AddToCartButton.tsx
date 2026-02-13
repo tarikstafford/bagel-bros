@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useCartStore } from '@/lib/store/cart-store';
 import { storefrontClient } from '@/lib/shopify/client';
 import { CREATE_CART, ADD_TO_CART } from '@/lib/shopify/mutations';
-import toast from 'react-hot-toast';
+import { toast } from '@/lib/utils/toast-config';
 
 interface AddToCartButtonProps {
   variantId: string;
@@ -77,26 +77,11 @@ export default function AddToCartButton({
         setTotalAmount(cart.cost.totalAmount.amount);
       }
 
-      toast.success(`Added ${productTitle} (${size})`, {
-        style: {
-          background: '#D4A574',
-          color: '#0A0A0A',
-          fontFamily: 'Space Mono, monospace',
-          fontSize: '14px',
-          fontWeight: 'bold',
-        },
-      });
+      toast.success(`Added ${productTitle} (${size})`);
       openCart();
     } catch (error) {
       console.error('Add to cart error:', error);
-      toast.error('Failed to add to cart', {
-        style: {
-          background: '#0A0A0A',
-          color: '#FEFEFE',
-          fontFamily: 'Space Mono, monospace',
-          fontSize: '14px',
-        },
-      });
+      toast.error('Failed to add to cart');
     } finally {
       setIsLoading(false);
     }
@@ -117,7 +102,7 @@ export default function AddToCartButton({
     >
       {isLoading ? (
         <span className="flex items-center justify-center gap-2">
-          <div className="w-4 h-4 border-2 border-true-black/30 border-t-true-black rounded-full animate-spin"></div>
+          <div className="w-4 h-4 border-3 border-true-black/30 border-t-true-black animate-spin"></div>
           Adding...
         </span>
       ) : disabled ? (

@@ -8,7 +8,7 @@ export default function HomePage() {
   const dropConfig = getDropConfig();
 
   return (
-    <div className="min-h-screen pt-24 sm:pt-28">
+    <div className="min-h-screen pt-32 sm:pt-36">
       {/* Hero Section - Brutalist Impact */}
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden grain bg-cream">
         {/* Background Video/Image */}
