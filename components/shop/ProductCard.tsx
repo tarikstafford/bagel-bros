@@ -25,7 +25,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       className="group block"
     >
       {/* Image Container */}
-      <div className="relative w-full aspect-square bg-true-black/5 border-3 border-true-black overflow-hidden mb-3">
+      <div className="relative w-full aspect-square bg-true-black/5 border-3 border-true-black overflow-hidden mb-4">
         {image ? (
           <Image
             src={image.url}
@@ -64,11 +64,11 @@ export default function ProductCard({ product }: ProductCardProps) {
       </div>
 
       {/* Product Info */}
-      <div className="space-y-1">
+      <div className="space-y-2">
         <h3 className="font-display text-xl sm:text-2xl group-hover:text-bagel-tan transition-colors duration-300 leading-tight">
           {product.title}
         </h3>
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between pt-1">
           <div className="font-mono text-sm font-bold">
             {currency === 'USD' ? '$' : currency}
             {price.toFixed(2)}

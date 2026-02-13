@@ -10,17 +10,25 @@ Brutalist streetwear aesthetic — bold, unapologetic, minimal polish. Heavy bla
 - Micro: 4px, 8px, 12px
 - Small: 16px, 20px, 24px
 - Medium: 32px, 48px
-- Large: 64px, 80px, 96px
+- Large: 64px, 80px
 - XL: 128px
+
+**Layout rhythm:**
+- Fixed header: h-20 (80px)
+- Page top padding: pt-20 (80px) — ensures content clears fixed header
+- Section vertical padding: py-20 sm:py-32 (80px / 128px)
+- Container max-widths: max-w-5xl to max-w-6xl for consistency
+- Grid gaps: gap-6 sm:gap-8 (24px / 32px) for cards, gap-4 sm:gap-6 (16px / 24px) for galleries
 
 ## Depth
 **System:** Borders-only with brutal offset shadows
 
 **Rules:**
-- Use border-3 (3px) for most elements
-- Use border-2 for subtle elements
+- Use border-3 (3px) for ALL structural elements (consistency is key)
 - Use border-brutal utility for buttons/CTAs (3px border + 6px offset shadow)
+- NEVER use border-2 or border-4 unless explicitly required
 - NEVER use traditional box-shadow (blur/spread)
+- NEVER use rounded corners (rounded-*) — brutal means sharp edges
 - OK to use brutal shadows: `box-shadow: 6px 6px 0 var(--true-black)`
 - Focus states use 3px solid outline with bagel-tan
 

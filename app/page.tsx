@@ -8,9 +8,9 @@ export default function HomePage() {
   const dropConfig = getDropConfig();
 
   return (
-    <div className="min-h-screen pt-32 sm:pt-36">
+    <div className="min-h-screen pt-20">
       {/* Hero Section - Brutalist Impact */}
-      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden grain bg-cream">
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden grain bg-cream pt-16">
         {/* Background Video/Image */}
         <div className="absolute inset-0">
           <Image
@@ -120,8 +120,9 @@ export default function HomePage() {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-true-black/30 rounded-full flex justify-center pt-2">
-            <div className="w-1 h-3 bg-true-black/30 rounded-full"></div>
+          <div className="w-8 h-12 border-3 border-true-black/20 flex flex-col items-center justify-start pt-2 gap-1">
+            <div className="w-2 h-2 bg-true-black/30"></div>
+            <div className="w-2 h-2 bg-true-black/20"></div>
           </div>
         </div>
       </section>
@@ -129,9 +130,9 @@ export default function HomePage() {
       {/* Lifestyle Video Section */}
       <section className="py-20 sm:py-32 bg-true-black text-cream relative overflow-hidden">
         <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Video/Image */}
-            <div className="relative w-full aspect-video border-3 border-cream overflow-hidden group lg:max-w-md">
+            <div className="relative w-full aspect-video border-3 border-cream overflow-hidden group">
               <Image
                 src="/images/lifestyle-section.jpg"
                 alt="Padel players lifestyle"
@@ -141,7 +142,7 @@ export default function HomePage() {
               />
               {/* Play button overlay for future video */}
               <div className="absolute inset-0 flex items-center justify-center bg-true-black/40 group-hover:bg-true-black/20 transition-colors">
-                <div className="w-20 h-20 border-3 border-cream rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                <div className="w-20 h-20 border-3 border-cream flex items-center justify-center group-hover:scale-110 transition-transform">
                   <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-cream border-b-8 border-b-transparent ml-1"></div>
                 </div>
               </div>
@@ -239,7 +240,7 @@ export default function HomePage() {
             </div>
 
             {/* Image */}
-            <div className="relative w-full aspect-video border-3 border-true-black overflow-hidden group max-w-md lg:max-w-lg mx-auto lg:mx-0">
+            <div className="relative w-full aspect-video border-3 border-true-black overflow-hidden group mx-auto lg:mx-0">
               <Image
                 src="/images/brand-story.jpg"
                 alt="Padel player in action"
@@ -256,20 +257,20 @@ export default function HomePage() {
       {/* Product Preview Grid */}
       {dropConfig.mode === 'live' && (
         <section className="py-20 sm:py-32 bg-true-black text-cream">
-          <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
-            <h2 className="font-display text-display-lg mb-12 text-center">
+          <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
+            <h2 className="font-display text-display-lg mb-16 text-center">
               FEATURED
               <br />
               <span className="text-bagel-tan">DROP</span>
             </h2>
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {[
                 '/images/product-1.jpg',
                 '/images/product-2.jpg',
                 '/images/product-3.jpg',
                 '/images/product-4.jpg',
               ].map((img, i) => (
-                <div key={i} className="relative w-full aspect-square border-3 border-cream overflow-hidden group max-w-[200px] mx-auto">
+                <div key={i} className="relative w-full aspect-square border-3 border-cream overflow-hidden group">
                   <Image
                     src={img}
                     alt={`Product ${i + 1}`}
@@ -281,7 +282,7 @@ export default function HomePage() {
                 </div>
               ))}
             </div>
-            <div className="text-center mt-12">
+            <div className="text-center mt-16">
               <Link
                 href="/shop"
                 className="inline-block border-brutal border-brutal-hover bg-bagel-tan text-true-black px-12 py-5 font-display text-2xl"
@@ -337,7 +338,7 @@ export default function HomePage() {
           </h2>
 
           {/* Instagram-style grid */}
-          <div className="grid grid-cols-3 gap-3 sm:gap-4 mb-12 max-w-2xl mx-auto">
+          <div className="grid grid-cols-3 gap-4 sm:gap-6 mb-12 max-w-2xl mx-auto">
             {[
               '/images/community-1.jpg',
               '/images/community-2.jpg',
@@ -346,7 +347,7 @@ export default function HomePage() {
               '/images/community-5.jpg',
               '/images/community-6.jpg',
             ].map((img, i) => (
-              <div key={i} className="relative w-full aspect-square border-2 border-cream/20 overflow-hidden group max-w-[180px] mx-auto">
+              <div key={i} className="relative w-full aspect-square border-3 border-cream/30 overflow-hidden group">
                 <Image
                   src={img}
                   alt={`Community ${i + 1}`}

@@ -2,9 +2,9 @@ import Image from 'next/image';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen pt-32 sm:pt-36">
+    <div className="min-h-screen pt-20">
       {/* Hero with Background Image */}
-      <section className="py-20 sm:py-32 bg-true-black text-cream relative overflow-hidden">
+      <section className="py-24 sm:py-32 bg-true-black text-cream relative overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -23,11 +23,11 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
-          <div className="font-mono text-xs uppercase tracking-wider bg-bagel-tan text-true-black px-4 py-2 inline-block mb-8">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 text-center">
+          <div className="font-mono text-xs uppercase tracking-wider bg-bagel-tan text-true-black px-4 py-2 inline-block mb-12">
             The Manifesto
           </div>
-          <h1 className="font-display text-display-xl mb-8 max-w-5xl mx-auto">
+          <h1 className="font-display text-display-xl mb-12 max-w-5xl mx-auto">
             THE
             <br />
             BAGEL BROS
@@ -42,12 +42,12 @@ export default function AboutPage() {
 
       {/* What is a Bagel with Image */}
       <section className="py-20 sm:py-32 bg-bagel-tan">
-        <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-3xl mx-auto">
-            <h2 className="font-display text-display-md mb-8 text-center">
+            <h2 className="font-display text-display-md mb-12 text-center">
               WHAT IS A BAGEL?
             </h2>
-            <div className="border-brutal bg-cream p-8 sm:p-12 mb-8">
+            <div className="border-brutal bg-cream p-8 sm:p-12 mb-12">
               <p className="font-mono text-base sm:text-lg leading-relaxed text-center">
                 In padel (and tennis), getting &quot;bageled&quot; means losing a set 6-0.
                 It&apos;s the ultimate scoreline. The perfect circle of defeat. A donut. A zero.
@@ -174,7 +174,7 @@ export default function AboutPage() {
           />
         </div>
 
-        <div className="relative z-10 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
           <h2 className="font-display text-display-lg mb-16 text-center">
             THE
             <br />
@@ -204,39 +204,39 @@ export default function AboutPage() {
 
       {/* The Pledge */}
       <section className="py-20 sm:py-32 bg-bagel-tan">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-3xl mx-auto">
             <h2 className="font-display text-display-md mb-12 text-center">
               THE 6-0 CLUB PLEDGE
             </h2>
 
             <div className="border-brutal bg-cream p-8 sm:p-12">
-              <ul className="space-y-6 font-mono text-sm sm:text-base">
-                <li className="flex items-start gap-4">
+              <ul className="space-y-8 font-mono text-sm sm:text-base">
+                <li className="flex items-start gap-6">
                   <div className="w-8 h-8 border-3 border-true-black bg-bagel-tan flex-shrink-0 flex items-center justify-center font-display text-xl">
                     ✓
                   </div>
                   <span>We show up even when we know we&apos;ll lose</span>
                 </li>
-                <li className="flex items-start gap-4">
+                <li className="flex items-start gap-6">
                   <div className="w-8 h-8 border-3 border-true-black bg-bagel-tan flex-shrink-0 flex items-center justify-center font-display text-xl">
                     ✓
                   </div>
                   <span>We laugh at our unforced errors (after crying a little)</span>
                 </li>
-                <li className="flex items-start gap-4">
+                <li className="flex items-start gap-6">
                   <div className="w-8 h-8 border-3 border-true-black bg-bagel-tan flex-shrink-0 flex items-center justify-center font-display text-xl">
                     ✓
                   </div>
                   <span>We wear our bagels with pride</span>
                 </li>
-                <li className="flex items-start gap-4">
+                <li className="flex items-start gap-6">
                   <div className="w-8 h-8 border-3 border-true-black bg-bagel-tan flex-shrink-0 flex items-center justify-center font-display text-xl">
                     ✓
                   </div>
                   <span>We never quit, even when we probably should</span>
                 </li>
-                <li className="flex items-start gap-4">
+                <li className="flex items-start gap-6">
                   <div className="w-8 h-8 border-3 border-true-black bg-bagel-tan flex-shrink-0 flex items-center justify-center font-display text-xl">
                     ✓
                   </div>
@@ -257,14 +257,14 @@ export default function AboutPage() {
             <span className="text-bagel-tan">TEAM</span>
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
             {[
               '/images/team-1.jpg',
               '/images/team-2.jpg',
               '/images/team-3.jpg',
               '/images/team-4.jpg',
             ].map((img, i) => (
-              <div key={i} className="relative w-full aspect-[4/5] border-3 border-true-black overflow-hidden group max-w-[200px] mx-auto">
+              <div key={i} className="relative w-full aspect-[4/5] border-3 border-true-black overflow-hidden group">
                 <Image
                   src={img}
                   alt={`Team member ${i + 1}`}
@@ -281,7 +281,7 @@ export default function AboutPage() {
 
       {/* Limited Drops */}
       <section className="py-20 sm:py-32 bg-true-black text-cream text-center">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
           <h2 className="font-display text-display-lg mb-8">
             LIMITED DROPS.
             <br />
@@ -306,7 +306,7 @@ export default function AboutPage() {
 
       {/* Final CTA */}
       <section className="py-20 sm:py-32 bg-bagel-tan text-true-black text-center">
-        <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
           <h2 className="font-display text-display-lg mb-6">
             WELCOME TO
             <br />

@@ -47,7 +47,7 @@ export default function RootLayout({
               background: '#0A0A0A',
               color: '#FEFEFE',
               fontFamily: 'Space Mono, monospace',
-              border: '2px solid #0A0A0A',
+              border: '3px solid #0A0A0A',
             },
           }}
         />

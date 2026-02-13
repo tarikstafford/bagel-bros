@@ -29,32 +29,32 @@ export default async function ShopPage() {
   const products = await getProducts();
 
   return (
-    <div className="min-h-screen pt-32 sm:pt-36 pb-20">
+    <div className="min-h-screen pt-20 pb-20">
       {/* Hero Header */}
-      <section className="bg-true-black text-cream py-16 sm:py-20 mb-16 sm:mb-20">
-        <div className="max-w-5xl mx-auto px-6 sm:px-8 lg:px-12">
+      <section className="bg-true-black text-cream py-20 sm:py-24 mb-16 sm:mb-20">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl">
-            <div className="font-mono text-xs uppercase tracking-wider bg-bagel-tan text-true-black px-4 py-2 inline-block mb-6">
+            <div className="font-mono text-xs uppercase tracking-wider bg-bagel-tan text-true-black px-4 py-2 inline-block mb-8">
               Now Available
             </div>
-            <h1 className="font-display text-display-lg mb-6">
+            <h1 className="font-display text-display-lg mb-8">
               DROP 001
               <br />
               <span className="text-bagel-tan">THE FIRST</span>
               <br />
               COLLECTION
             </h1>
-            <div className="flex flex-wrap gap-8 font-mono text-sm">
+            <div className="flex flex-wrap gap-12 font-mono text-sm">
               <div>
-                <div className="text-cream/50 text-xs uppercase tracking-wider mb-1">Items</div>
+                <div className="text-cream/50 text-xs uppercase tracking-wider mb-2">Items</div>
                 <div className="font-bold">{products.length} SKUs</div>
               </div>
               <div>
-                <div className="text-cream/50 text-xs uppercase tracking-wider mb-1">Policy</div>
+                <div className="text-cream/50 text-xs uppercase tracking-wider mb-2">Policy</div>
                 <div className="font-bold">No Restocks</div>
               </div>
               <div>
-                <div className="text-cream/50 text-xs uppercase tracking-wider mb-1">Status</div>
+                <div className="text-cream/50 text-xs uppercase tracking-wider mb-2">Status</div>
                 <div className="font-bold text-bagel-tan">Live Now</div>
               </div>
             </div>
@@ -74,7 +74,7 @@ export default async function ShopPage() {
             </p>
           </div>
         ) : (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 sm:gap-10">
             {products.map((product, index) => (
               <div
                 key={product.id}

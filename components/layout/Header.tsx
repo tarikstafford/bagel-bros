@@ -11,9 +11,9 @@ export default function Header() {
   const itemCount = lines.reduce((acc, line) => acc + line.quantity, 0);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-cream border-b-4 border-true-black">
-      <nav className="max-w-[1800px] mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="flex items-center justify-between h-24 sm:h-28">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-cream border-b-3 border-true-black">
+      <nav className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-20">
           {/* Logo + Brand - Left Side */}
           <Link
             href="/"
